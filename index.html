@@ -20,11 +20,69 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filters">
+			<defs>
+				<filter id="blur">
+					<feGaussianBlur id="blurfilter" in="SourceGraphic" stdDeviation="0,0" />
+				</filter>
+			</defs>
+		</svg>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
+				<section>
+					<h1 style="filter: url('#blur')">Kha</h1>
+					<h1 class="fragment fade-out" data-fragment-index="2">Returns</h1>
+					<div id="container" style="position:relative;">
+						<p class="fragment fade-in" style="position:absolute; top:0; left:0;" data-fragment-index="1">
+							<span class="fragment fade-out" data-fragment-index="2">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							and it is faster</span>
+						</p>
+						<p class="fragment fade-left" id="faster" style="position:absolute; top:0; left:0;">
+							<span class="fragment fade-out" style="filter: url('#blur')">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							SnowKit</span>
+						</p>
+						<p class="fragment fade-left" style="position:absolute; top:0; left:0;">
+							<span class="fragment fade-out" style="filter: url('#blur')">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							OpenFL</span>
+						</p>
+						<p class="fragment fade-left" style="position:absolute; top:0; left:0;">
+							<span class="fragment fade-out" style="filter: url('#blur')">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Unity</span>
+						</p>
+						<p class="fragment fade-left" style="position:absolute; top:0; left:0;">
+							<span class="fragment fade-out" style="filter: url('#blur')">
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							Unreal</span>
+						</p>
+					</div>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</section>
 				<section>Slide 2</section>
 			</div>
 		</div>
@@ -44,6 +102,18 @@
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
+			});
+
+			Reveal.addEventListener('fragmentshown', function (event) {
+				if (event.fragment === document.getElementById('faster')) {
+					let xblur = 0;
+					function animateBlur() {
+						document.getElementById('blurfilter').setAttribute('stdDeviation', xblur + ',0');
+						xblur += 0.02;
+						if (xblur < 5) window.setTimeout(() => { animateBlur(); }, 100);
+					}
+					animateBlur();
+				}
 			});
 		</script>
 	</body>
