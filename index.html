@@ -43,7 +43,7 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							and it is faster</span>
 						</p>
-						<p class="fragment fade-left" style="position:absolute; top:0; left:0;">
+						<p id="faster" class="fragment fade-left" style="position:absolute; top:0; left:0;">
 							<span class="fragment fade-out" style="filter: url('#blur')">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -100,8 +100,12 @@
 					<img src="images/bunnymark.png"/>
 				</section>
 				<section>
+					<h2>Bunnymark</h2>
+					<p>Big caveats:<br/>Only draws the same image again and again<br/>No browser tests yet</p>
+				</section>
+				<section>
 					<h2>Why is OpenFL fast?</h2>
-					<pre><code data-trim data-noescape class="haxe">
+					<pre class="fragment"><code data-trim data-noescape class="haxe">
 for (i in 0...numBunnies) {
 	// ...
 	drawList[index] = bunny.position.x;
@@ -119,7 +123,7 @@ for (i in 0...bunnies.length) {
 					</code></pre>
 				</section>
 				<section>
-					<h2>Why are Kha's bunnies fast?</h2>
+					<h2>Why is Kha fast?</h2>
 					<p class="fragment">I use profilers</p>
 				</section>
 				<section>
@@ -174,9 +178,13 @@ for (i in 0...bunnies.length) {
 					</ul>
 				</section>
 				<section>
+					<h2>Next steps in runtime performance</h2>
+					<p>Work on a more comprehensive performance test suite is in progress</p>
+				</section>
+				<section>
 					<h2>Loading Data</h2>
-					<p>Typically the biggest data set and also the biggest optimization potential:</p>
-					<p>Images</p>
+					<p class="fragment">Typically the biggest data set and also the biggest optimization potential:</p>
+					<p class="fragment">Images</p>
 				</section>
 				<section>
 					<h2>Loading Images</h2>
