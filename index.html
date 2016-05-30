@@ -386,11 +386,11 @@ project.addShaders('Shaders/**', {
 
 			Reveal.addEventListener('fragmentshown', function (event) {
 				if (event.fragment === document.getElementById('faster')) {
-					let xblur = 0;
+					var xblur = 0;
 					function animateBlur() {
 						document.getElementById('blurfilter').setAttribute('stdDeviation', xblur + ',0');
 						xblur += 0.02;
-						if (xblur < 5) window.setTimeout(() => { animateBlur(); }, 100);
+						if (xblur < 5) window.setTimeout(function () { animateBlur(); }, 100);
 					}
 					animateBlur();
 				}
