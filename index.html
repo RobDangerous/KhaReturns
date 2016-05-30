@@ -32,6 +32,12 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
+					<h3 class="fragment">Kore<br/><small>(Kha's C++ sister project)</small></h3>
+					<h3 class="fragment">krafix<br/><small>(Shader cross-compiler)</small></h3>
+					<h3 class="fragment">kraffiti<br/><small>(Image compression tool)</small></h3>
+					<h3 class="fragment">g2/g4<br/><small>(2D/3D Graphics API)</small></h3>
+				</section>
+				<section>
 					<h1 style="filter: url('#blur')">Kha</h1>
 					<h1 class="fragment fade-out" data-fragment-index="2">Returns</h1>
 					<div id="container" style="position:relative;">
@@ -104,12 +110,12 @@
 					<p>Big caveats:<br/>Only draws the same image again and again<br/>No browser tests yet</p>
 				</section>
 				<section>
-					<h2>Why is OpenFL fast?</h2>
+					<h2>Why is NME/OpenFL fast?</h2>
 					<pre class="fragment"><code data-trim data-noescape class="haxe">
 for (i in 0...numBunnies) {
 	// ...
 	drawList[index] = bunny.position.x;
-	drawList[index + 1] = bunny.position.y;			
+	drawList[index + 1] = bunny.position.y;
 }
 tilesheet.drawTiles(graphics, drawList, false);
 					</code></pre>
@@ -178,8 +184,8 @@ for (i in 0...bunnies.length) {
 					</ul>
 				</section>
 				<section>
-					<h2>Next steps in runtime performance</h2>
-					<p>Work on a more comprehensive performance test suite is in progress</p>
+					<h2 class="fragment">Next steps in runtime performance?</h2>
+					<p class="fragment">A comprehensive preformance test suite</p>
 				</section>
 				<section>
 					<h2>Loading Data</h2>
@@ -261,8 +267,8 @@ project.addShaders('Shaders/**', {
 					<h2>G5</h2>
 					<ul>
 						<li class="fragment">Vulkan/Direct3D12 style API</li>
-						<li class="fragment">G4 on G5</li>
-						<li class="fragment">G5 on G4</li>
+						<li class="fragment">G4 on G5 (first version in Kore)</li>
+						<li class="fragment">G5 on G4 (coming soon)</li>
 						<li class="fragment">Lower level control, no magic performance boost compared to G4</li>
 						<li class="fragment">
 							Considerable, magic performance boost in G2 coming up
@@ -275,23 +281,15 @@ project.addShaders('Shaders/**', {
 					</ul>
 				</section>
 				<section>
-					<h2>SDL</h2>
-					<ul>
-						<li class="fragment">Complete SDL backend</li>
-						<li class="fragment">Including graphics</li>
-						<li class="fragment">Provides support for lots of really old systems</li>
-					</ul>
-				</section>
-				<section>
-					<h2>SDL</h2>
-					TODO: Video
+					<p><video src="videos/polylight.mp4"/></p>
+					<p><a href="http://luboslenco.com/notes/">http://luboslenco.com/notes/</a></p>
 				</section>
 				<section>
 					<h2>Audio</h2>
 					<ul>
 						<li class="fragment">Object based surround audio</li>
-						<li class="fragment">Dolby Atmos support in research</li>
-						<li class="fragment">Surround simulation on headphones available</li>
+						<li class="fragment">Dolby Atmos/DTS:X support in research</li>
+						<li class="fragment">Surround simulation on headphones available<br/>(only htm5 currently, based on hrtf-panner-js)</li>
 					</ul>
 				</section>
 				<section>
@@ -312,19 +310,19 @@ project.addShaders('Shaders/**', {
 				<section>
 					<h2>Chrome</h2>
 					<ul>
-						<li>Fast code execution for Haxe thanks to V8</li>
-						<li>WebGL's feature set is severely outdated</li>
-						<li>WebGL is not as fast as it could be because of security</li>
-						<li>Still no compute shader support</li>
+						<li class="fragment">Fast code execution for Haxe thanks to V8</li>
+						<li class="fragment">WebGL's feature set is severely outdated</li>
+						<li class="fragment">WebGL is not as fast as it could be because of security</li>
+						<li class="fragment">Still no compute shader support</li>
 					</ul>
 				</section>
 				<section>
 					<h2>Krom</h2>
 					<ul>
 						<li>Fast code execution for Haxe thanks to V8</li>
-						<li>Full G5 support</li>
+						<li>No WebGL restrictions</li>
 						<li>Speed is priority 1</li>
-						<li>Compute shaders</li>
+						<li>Compute shaders coming</li>
 					</ul>
 				</section>
 				<section>
@@ -339,7 +337,7 @@ project.addShaders('Shaders/**', {
 					<h2>Krom</h2>
 					<ul>
 						<li>Special development features</li>
-						<li>New default debugger in Kode Studio</li>
+						<li>Soon to be the new default debugger in Kode Studio</li>
 					</ul>
 				</section>
 				<section>
